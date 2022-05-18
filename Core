@@ -15,23 +15,26 @@ local player = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
 local visuals = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
-local main_2 = Instance.new("TextButton")
+local main2 = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
 local extra = Instance.new("TextButton")
 local UICorner_6 = Instance.new("UICorner")
 local credits = Instance.new("TextButton")
 local UICorner_7 = Instance.new("UICorner")
-local v2 = Instance.new("Frame")
+local player2 = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextButton_Roundify_12px = Instance.new("ImageLabel")
+local UICorner_8 = Instance.new("UICorner")
+local credits2 = Instance.new("Frame")
+local extra2 = Instance.new("Frame")
+local mainv2 = Instance.new("Frame")
+local visuals2 = Instance.new("Frame")
 local FOV = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
 local FOVValue = Instance.new("TextLabel")
 local Slider = Instance.new("Frame")
 local Knob = Instance.new("Frame")
-local UICorner_8 = Instance.new("UICorner")
-local player_2 = Instance.new("Frame")
-local Frame = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
-local TextButton_Roundify_12px = Instance.new("ImageLabel")
 local UICorner_9 = Instance.new("UICorner")
 local loading = Instance.new("Frame")
 local start = Instance.new("TextButton")
@@ -52,8 +55,9 @@ client.Parent = game.CoreGui
 main.Name = "main"
 main.Parent = client
 main.BackgroundColor3 = Color3.fromRGB(107, 107, 107)
-main.Position = UDim2.new(0.0672668517, 0, 0.0882224664, 0)
+main.Position = UDim2.new(0.0640227348, 0, 0.039142713, 0)
 main.Size = UDim2.new(0, 452, 0, 672)
+main.Visible = false
 main.ZIndex = 2
 main.Active=true
 main.Draggable=true
@@ -123,21 +127,21 @@ visuals.TextWrapped = true
 
 UICorner_4.Parent = visuals
 
-main_2.Name = "main"
-main_2.Parent = main
-main_2.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
-main_2.Position = UDim2.new(0.00442479551, 0, 0.132440478, 0)
-main_2.Size = UDim2.new(0.197999999, 0, 0.0500000007, 0)
-main_2.ZIndex = 3
-main_2.Font = Enum.Font.Highway
-main_2.Text = "MAIN"
-main_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-main_2.TextScaled = true
-main_2.TextSize = 14.000
-main_2.TextStrokeTransparency = 0.000
-main_2.TextWrapped = true
+main2.Name = "main2"
+main2.Parent = main
+main2.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+main2.Position = UDim2.new(0.00442479551, 0, 0.132440478, 0)
+main2.Size = UDim2.new(0.197999999, 0, 0.0500000007, 0)
+main2.ZIndex = 3
+main2.Font = Enum.Font.Highway
+main2.Text = "MAIN"
+main2.TextColor3 = Color3.fromRGB(255, 255, 255)
+main2.TextScaled = true
+main2.TextSize = 14.000
+main2.TextStrokeTransparency = 0.000
+main2.TextWrapped = true
 
-UICorner_5.Parent = main_2
+UICorner_5.Parent = main2
 
 extra.Name = "extra"
 extra.Parent = main
@@ -171,14 +175,84 @@ credits.TextWrapped = true
 
 UICorner_7.Parent = credits
 
-v2.Name = "v2"
-v2.Parent = main
-v2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-v2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
-v2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
+player2.Name = "player2"
+player2.Parent = main
+player2.BackgroundColor3 = Color3.fromRGB(204, 0, 255)
+player2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
+player2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
+player2.ZIndex = 3
+
+Frame.Parent = player2
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Size = UDim2.new(0, 100, 0, 100)
+Frame.ZIndex = 3
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.172224432, 0, 0.282344222, 0)
+TextButton.Size = UDim2.new(0.887775779, 0, 0.426837206, 0)
+TextButton.ZIndex = 4
+TextButton.Font = Enum.Font.IndieFlower
+TextButton.Text = "Noclip"
+TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+TextButton_Roundify_12px.Name = "TextButton_Roundify_12px"
+TextButton_Roundify_12px.Parent = TextButton
+TextButton_Roundify_12px.Active = true
+TextButton_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_12px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_12px.BackgroundTransparency = 1.000
+TextButton_Roundify_12px.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_12px.Selectable = true
+TextButton_Roundify_12px.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_12px.Visible = false
+TextButton_Roundify_12px.Image = "rbxassetid://3570695787"
+TextButton_Roundify_12px.ImageColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_Roundify_12px.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_12px.SliceScale = 0.120
+
+UICorner_8.Parent = TextButton
+
+credits2.Name = "credits2"
+credits2.Parent = main
+credits2.BackgroundColor3 = Color3.fromRGB(8, 0, 255)
+credits2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
+credits2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
+credits2.Visible = false
+credits2.ZIndex = 3
+
+extra2.Name = "extra2"
+extra2.Parent = main
+extra2.BackgroundColor3 = Color3.fromRGB(255, 21, 0)
+extra2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
+extra2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
+extra2.Visible = false
+extra2.ZIndex = 3
+
+mainv2.Name = "mainv2"
+mainv2.Parent = main
+mainv2.BackgroundColor3 = Color3.fromRGB(25, 255, 0)
+mainv2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
+mainv2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
+mainv2.Visible = false
+mainv2.ZIndex = 3
+
+visuals2.Name = "visuals2"
+visuals2.Parent = main
+visuals2.BackgroundColor3 = Color3.fromRGB(255, 179, 0)
+visuals2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
+visuals2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
+visuals2.Visible = false
+visuals2.ZIndex = 3
 
 FOV.Name = "FOV"
-FOV.Parent = v2
+FOV.Parent = visuals2
 FOV.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 FOV.BackgroundTransparency = 0.300
 FOV.BorderColor3 = Color3.fromRGB(64, 64, 64)
@@ -230,48 +304,7 @@ Knob.Position = UDim2.new(0, -10, 0, 67)
 Knob.Size = UDim2.new(0, 20, 0, 20)
 Knob.ZIndex = 5
 
-UICorner_8.Parent = Knob
-
-player_2.Name = "player"
-player_2.Parent = main
-player_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-player_2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
-player_2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
-
-Frame.Parent = player_2
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.Size = UDim2.new(0, 100, 0, 100)
-
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.172224432, 0, 0.282344222, 0)
-TextButton.Size = UDim2.new(0.887775779, 0, 0.426837206, 0)
-TextButton.ZIndex = 3
-TextButton.Font = Enum.Font.IndieFlower
-TextButton.Text = "Noclip"
-TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
-TextButton_Roundify_12px.Name = "TextButton_Roundify_12px"
-TextButton_Roundify_12px.Parent = TextButton
-TextButton_Roundify_12px.Active = true
-TextButton_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
-TextButton_Roundify_12px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_Roundify_12px.BackgroundTransparency = 1.000
-TextButton_Roundify_12px.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextButton_Roundify_12px.Selectable = true
-TextButton_Roundify_12px.Size = UDim2.new(1, 0, 1, 0)
-TextButton_Roundify_12px.Visible = false
-TextButton_Roundify_12px.Image = "rbxassetid://3570695787"
-TextButton_Roundify_12px.ImageColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_Roundify_12px.ScaleType = Enum.ScaleType.Slice
-TextButton_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
-TextButton_Roundify_12px.SliceScale = 0.120
-
-UICorner_9.Parent = TextButton
+UICorner_9.Parent = Knob
 
 loading.Name = "loading"
 loading.Parent = client
@@ -279,7 +312,6 @@ loading.AnchorPoint = Vector2.new(0.5, 0.5)
 loading.BackgroundColor3 = Color3.fromRGB(40, 43, 41)
 loading.Position = UDim2.new(0.499594808, 0, 0.499233127, 0)
 loading.Size = UDim2.new(0, 282, 0, 104)
-loading.Visible = false
 loading.ZIndex = 2
 
 start.Name = "start"
@@ -334,7 +366,7 @@ UICorner_13.Parent = bar
 
 -- Scripts:
 
-local function GPQF_fake_script() -- background.LocalScript 
+local function FBUEH_fake_script() -- background.LocalScript 
 	local script = Instance.new('LocalScript', background)
 
 	
@@ -345,8 +377,8 @@ local function GPQF_fake_script() -- background.LocalScript
 	local Tween = TweenService:Create(script.Parent.UIGradient, TweenInformation, Goal) -- Creates the tween and the parameters are: UIGradient (object) location, TweenInformation, and Goal.
 	Tween:Play() -- Plays the Tween
 end
-coroutine.wrap(GPQF_fake_script)()
-local function BRDHC_fake_script() -- main.LocalScript 
+coroutine.wrap(FBUEH_fake_script)()
+local function GPLVH_fake_script() -- main.LocalScript 
 	local script = Instance.new('LocalScript', main)
 
 	repeat wait()
@@ -430,61 +462,123 @@ local function BRDHC_fake_script() -- main.LocalScript
 	end)
 	Fly()
 end
-coroutine.wrap(BRDHC_fake_script)()
-local function YEGFNO_fake_script() -- FOV.FOVLogic 
-	local script = Instance.new('LocalScript', FOV)
+coroutine.wrap(GPLVH_fake_script)()
+local function HTEOO_fake_script() -- player.open/close 
+	local script = Instance.new('LocalScript', player)
 
-	local UIS = game:GetService("UserInputService")
-	
-	wait(1)
-	
-	local P = script.Parent
-	local slider = P.Slider
-	local knob = slider.Knob
-	local FOVLabel = P.FOVValue
-	local knobGrabbed = false
-	
-	local camera = workspace.CurrentCamera
-	
-	function GrabFOVKnob()
-		knobGrabbed = true
-	end
-	
-	function MoveFOVKnob(screenPosition)
-		local yDiff = screenPosition.y - slider.AbsolutePosition.y
-		local knobPositionRatio = math.min(math.max(yDiff / slider.AbsoluteSize.y, 0), 1)
+	script.Parent.MouseButton1Click:Connect(function()
 		
-		local newFOV = 20 + 115 * (1 - knobPositionRatio)
-		camera.FieldOfView = newFOV
+	
 		
-		knob.Position = UDim2.new(0, -10, knobPositionRatio, -10)
-		FOVLabel.Text = math.floor(newFOV)
-	end
+		local menu = script.Parent.Parent.main2
+		local credits =script.Parent.Parent.credits2
+		local visuals =script.Parent.Parent.visuals2
+		local person =script.Parent.Parent.player2
+		local extra =script.Parent.Parent.extra2
 	
-	function ReleaseFOVKnob()
-		knobGrabbed = false
-	end
+			menu.Visible=false
+			credits.Visible=false
+			visuals.Visible=false
+			person.Visible=true
+			extra.Visible=false
 	
-	knob.InputBegan:connect(function(input)
-		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
-			GrabFOVKnob()
-		end
-	end)
+		end)
 	
-	UIS.InputChanged:connect(function(input, gameProcessedEvent)
-		if (not gameProcessedEvent and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) and knobGrabbed) then
-			MoveFOVKnob(input.Position)
-		end
-	end)
-	
-	UIS.InputEnded:connect(function(input, gameProcessedEvent)
-		if (not gameProcessedEvent and input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
-			ReleaseFOVKnob()
-		end
-	end)
 end
-coroutine.wrap(YEGFNO_fake_script)()
-local function LYTMMZ_fake_script() -- main.click tp 
+coroutine.wrap(HTEOO_fake_script)()
+local function JQCSQE_fake_script() -- visuals.open/close 
+	local script = Instance.new('LocalScript', visuals)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		
+	
+		
+		local menu = script.Parent.Parent.main2
+		local credits =script.Parent.Parent.credits2
+		local visuals =script.Parent.Parent.visuals2
+		local person =script.Parent.Parent.player2
+		local extra =script.Parent.Parent.extra2
+	
+			menu.Visible=false
+			credits.Visible=false
+			visuals.Visible=true
+			person.Visible=false
+			extra.Visible=false
+	
+		end)
+	
+end
+coroutine.wrap(JQCSQE_fake_script)()
+local function RXJBLB_fake_script() -- main2.open/close 
+	local script = Instance.new('LocalScript', main2)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		
+	
+		
+		local menu = script.Parent.Parent.main2
+		local credits =script.Parent.Parent.credits2
+		local visuals =script.Parent.Parent.visuals2
+		local person =script.Parent.Parent.player2
+		local extra =script.Parent.Parent.extra2
+	
+			menu.Visible=true
+			credits.Visible=false
+			visuals.Visible=false
+			person.Visible=false
+			extra.Visible=false
+	
+		end)
+	
+end
+coroutine.wrap(RXJBLB_fake_script)()
+local function OQRQ_fake_script() -- extra.open/close 
+	local script = Instance.new('LocalScript', extra)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		
+	
+		
+		local menu = script.Parent.Parent.main2
+		local credits =script.Parent.Parent.credits2
+		local visuals =script.Parent.Parent.visuals2
+		local person =script.Parent.Parent.player2
+		local extra =script.Parent.Parent.extra2
+	
+			menu.Visible=false
+			credits.Visible=false
+			visuals.Visible=false
+			person.Visible=false
+			extra.Visible=true
+	
+		end)
+	
+end
+coroutine.wrap(OQRQ_fake_script)()
+local function BKLN_fake_script() -- credits.open/close 
+	local script = Instance.new('LocalScript', credits)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		
+	
+		
+		local menu = script.Parent.Parent.main2
+		local credits =script.Parent.Parent.credits2
+		local visuals =script.Parent.Parent.visuals2
+		local person =script.Parent.Parent.player2
+		local extra =script.Parent.Parent.extra2
+	
+			menu.Visible=false
+			credits.Visible=true
+			visuals.Visible=false
+			person.Visible=false
+			extra.Visible=false
+	
+		end)
+	
+end
+coroutine.wrap(BKLN_fake_script)()
+local function HFGHXRB_fake_script() -- main.click tp 
 	local script = Instance.new('LocalScript', main)
 
 	local player = game:GetService("Players").LocalPlayer
@@ -520,12 +614,11 @@ local function LYTMMZ_fake_script() -- main.click tp
 		end
 	end)
 end
-coroutine.wrap(LYTMMZ_fake_script)()
-local function UFZQX_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(HFGHXRB_fake_script)()
+local function QPUH_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	-- @CloneTrooper1019, 2015
 	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	local c = workspace.CurrentCamera
@@ -606,8 +699,8 @@ local function UFZQX_fake_script() -- TextButton.LocalScript
 		end
 	end)
 end
-coroutine.wrap(UFZQX_fake_script)()
-local function RFXCGQ_fake_script() -- Frame.Master Control Script 
+coroutine.wrap(QPUH_fake_script)()
+local function AATW_fake_script() -- Frame.Master Control Script 
 	local script = Instance.new('Script', Frame)
 
 	local RankID = 0
@@ -635,8 +728,61 @@ local function RFXCGQ_fake_script() -- Frame.Master Control Script
 	script.Parent.TextButton.Visible = true
 	end
 end
-coroutine.wrap(RFXCGQ_fake_script)()
-local function XTCRO_fake_script() -- start.heart 
+coroutine.wrap(AATW_fake_script)()
+local function LAMI_fake_script() -- FOV.FOVLogic 
+	local script = Instance.new('LocalScript', FOV)
+
+	local UIS = game:GetService("UserInputService")
+	
+	wait(1)
+	
+	local P = script.Parent
+	local slider = P.Slider
+	local knob = slider.Knob
+	local FOVLabel = P.FOVValue
+	local knobGrabbed = false
+	
+	local camera = workspace.CurrentCamera
+	
+	function GrabFOVKnob()
+		knobGrabbed = true
+	end
+	
+	function MoveFOVKnob(screenPosition)
+		local yDiff = screenPosition.y - slider.AbsolutePosition.y
+		local knobPositionRatio = math.min(math.max(yDiff / slider.AbsoluteSize.y, 0), 1)
+		
+		local newFOV = 20 + 115 * (1 - knobPositionRatio)
+		camera.FieldOfView = newFOV
+		
+		knob.Position = UDim2.new(0, -10, knobPositionRatio, -10)
+		FOVLabel.Text = math.floor(newFOV)
+	end
+	
+	function ReleaseFOVKnob()
+		knobGrabbed = false
+	end
+	
+	knob.InputBegan:connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+			GrabFOVKnob()
+		end
+	end)
+	
+	UIS.InputChanged:connect(function(input, gameProcessedEvent)
+		if (not gameProcessedEvent and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) and knobGrabbed) then
+			MoveFOVKnob(input.Position)
+		end
+	end)
+	
+	UIS.InputEnded:connect(function(input, gameProcessedEvent)
+		if (not gameProcessedEvent and input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+			ReleaseFOVKnob()
+		end
+	end)
+end
+coroutine.wrap(LAMI_fake_script)()
+local function CZGO_fake_script() -- start.heart 
 	local script = Instance.new('LocalScript', start)
 
 	
@@ -647,8 +793,8 @@ local function XTCRO_fake_script() -- start.heart
 	local Tween = TweenService:Create(script.Parent.UIGradient, TweenInformation, Goal) -- Creates the tween and the parameters are: UIGradient (object) location, TweenInformation, and Goal.
 	Tween:Play() -- Plays the Tween
 end
-coroutine.wrap(XTCRO_fake_script)()
-local function ZMFD_fake_script() -- start.core 
+coroutine.wrap(CZGO_fake_script)()
+local function KMLP_fake_script() -- start.core 
 	local script = Instance.new('LocalScript', start)
 
 	local openbutton = script.Parent
@@ -675,8 +821,8 @@ local function ZMFD_fake_script() -- start.core
 			end
 	end)
 end
-coroutine.wrap(ZMFD_fake_script)()
-local function MZVPC_fake_script() -- close.destroy 
+coroutine.wrap(KMLP_fake_script)()
+local function DIQETYS_fake_script() -- close.destroy 
 	local script = Instance.new('LocalScript', close)
 
 	local player = game.Players.LocalPlayer
@@ -693,4 +839,4 @@ local function MZVPC_fake_script() -- close.destroy
 		game.StarterGui.client:Destroy()
 	end)
 end
-coroutine.wrap(MZVPC_fake_script)()
+coroutine.wrap(DIQETYS_fake_script)()
