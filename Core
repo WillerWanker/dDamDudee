@@ -1,0 +1,696 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local client = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local background = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local UICorner_2 = Instance.new("UICorner")
+local UIGradient_2 = Instance.new("UIGradient")
+local player = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local visuals = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local main_2 = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local extra = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local credits = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local v2 = Instance.new("Frame")
+local FOV = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local FOVValue = Instance.new("TextLabel")
+local Slider = Instance.new("Frame")
+local Knob = Instance.new("Frame")
+local UICorner_8 = Instance.new("UICorner")
+local player_2 = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextButton_Roundify_12px = Instance.new("ImageLabel")
+local UICorner_9 = Instance.new("UICorner")
+local loading = Instance.new("Frame")
+local start = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local UIGradient_3 = Instance.new("UIGradient")
+local UICorner_11 = Instance.new("UICorner")
+local close = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
+local UIGradient_4 = Instance.new("UIGradient")
+local bar = Instance.new("Frame")
+local UICorner_13 = Instance.new("UICorner")
+
+--Properties:
+
+client.Name = "client"
+client.Parent = game.CoreGui
+
+main.Name = "main"
+main.Parent = client
+main.BackgroundColor3 = Color3.fromRGB(107, 107, 107)
+main.Position = UDim2.new(0.0672668517, 0, 0.0882224664, 0)
+main.Size = UDim2.new(0, 452, 0, 672)
+main.ZIndex = 2
+main.Active=true
+main.Draggable=true
+
+title.Name = "title"
+title.Parent = main
+title.AnchorPoint = Vector2.new(0.5, 0.5)
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1.000
+title.Position = UDim2.new(0.498893797, 0, 0.065476194, 0)
+title.Size = UDim2.new(0, 251, 0, 62)
+title.ZIndex = 3
+title.Font = Enum.Font.IndieFlower
+title.Text = "dDamDude"
+title.TextColor3 = Color3.fromRGB(109, 109, 109)
+title.TextScaled = true
+title.TextSize = 14.000
+title.TextWrapped = true
+
+background.Name = "background"
+background.Parent = main
+background.AnchorPoint = Vector2.new(0.5, 0.5)
+background.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+background.Position = UDim2.new(0.5, 0, 0.5, 0)
+background.Size = UDim2.new(0, 458, 0, 678)
+
+UICorner.Parent = background
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 255, 255)), ColorSequenceKeypoint.new(0.22, Color3.fromRGB(175, 14, 255)), ColorSequenceKeypoint.new(0.52, Color3.fromRGB(255, 85, 255)), ColorSequenceKeypoint.new(0.79, Color3.fromRGB(241, 187, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(175, 249, 255))}
+UIGradient.Parent = background
+
+UICorner_2.Parent = main
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(149, 149, 149)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(16, 16, 16))}
+UIGradient_2.Rotation = 90
+UIGradient_2.Parent = main
+
+player.Name = "player"
+player.Parent = main
+player.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+player.Position = UDim2.new(0.400442481, 0, 0.132440478, 0)
+player.Size = UDim2.new(0.197999999, 0, 0.0500000007, 0)
+player.ZIndex = 3
+player.Font = Enum.Font.Highway
+player.Text = "LPlayer"
+player.TextColor3 = Color3.fromRGB(255, 255, 255)
+player.TextScaled = true
+player.TextSize = 14.000
+player.TextStrokeTransparency = 0.000
+player.TextWrapped = true
+
+UICorner_3.Parent = player
+
+visuals.Name = "visuals"
+visuals.Parent = main
+visuals.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+visuals.Position = UDim2.new(0.201327443, 0, 0.132440478, 0)
+visuals.Size = UDim2.new(0.197999999, 0, 0.0500000007, 0)
+visuals.ZIndex = 3
+visuals.Font = Enum.Font.Highway
+visuals.Text = "VISUALS"
+visuals.TextColor3 = Color3.fromRGB(255, 255, 255)
+visuals.TextScaled = true
+visuals.TextSize = 14.000
+visuals.TextStrokeTransparency = 0.000
+visuals.TextWrapped = true
+
+UICorner_4.Parent = visuals
+
+main_2.Name = "main"
+main_2.Parent = main
+main_2.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+main_2.Position = UDim2.new(0.00442479551, 0, 0.132440478, 0)
+main_2.Size = UDim2.new(0.197999999, 0, 0.0500000007, 0)
+main_2.ZIndex = 3
+main_2.Font = Enum.Font.Highway
+main_2.Text = "MAIN"
+main_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+main_2.TextScaled = true
+main_2.TextSize = 14.000
+main_2.TextStrokeTransparency = 0.000
+main_2.TextWrapped = true
+
+UICorner_5.Parent = main_2
+
+extra.Name = "extra"
+extra.Parent = main
+extra.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+extra.Position = UDim2.new(0.597345173, 0, 0.132440478, 0)
+extra.Size = UDim2.new(0.197999999, 0, 0.0500000007, 0)
+extra.ZIndex = 3
+extra.Font = Enum.Font.Highway
+extra.Text = "EXTRA"
+extra.TextColor3 = Color3.fromRGB(255, 255, 255)
+extra.TextScaled = true
+extra.TextSize = 14.000
+extra.TextStrokeTransparency = 0.000
+extra.TextWrapped = true
+
+UICorner_6.Parent = extra
+
+credits.Name = "credits"
+credits.Parent = main
+credits.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+credits.Position = UDim2.new(0.796460211, 0, 0.132440478, 0)
+credits.Size = UDim2.new(0.197999999, 0, 0.0500000007, 0)
+credits.ZIndex = 3
+credits.Font = Enum.Font.Highway
+credits.Text = "INFO"
+credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+credits.TextScaled = true
+credits.TextSize = 14.000
+credits.TextStrokeTransparency = 0.000
+credits.TextWrapped = true
+
+UICorner_7.Parent = credits
+
+v2.Name = "v2"
+v2.Parent = main
+v2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+v2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
+v2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
+
+FOV.Name = "FOV"
+FOV.Parent = v2
+FOV.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FOV.BackgroundTransparency = 0.300
+FOV.BorderColor3 = Color3.fromRGB(64, 64, 64)
+FOV.BorderSizePixel = 2
+FOV.Position = UDim2.new(1, -50, 1, -200)
+FOV.Size = UDim2.new(0, 50, 0, 200)
+FOV.ZIndex = 4
+
+Title.Name = "Title"
+Title.Parent = FOV
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Size = UDim2.new(1, 0, 0.100000001, 0)
+Title.Visible = false
+Title.ZIndex = 5
+Title.Font = Enum.Font.SourceSans
+Title.Text = "FOV"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+FOVValue.Name = "FOVValue"
+FOVValue.Parent = FOV
+FOVValue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FOVValue.BackgroundTransparency = 1.000
+FOVValue.Position = UDim2.new(0, 0, 0.899999976, 0)
+FOVValue.Size = UDim2.new(1, 0, 0.100000001, 0)
+FOVValue.ZIndex = 5
+FOVValue.Font = Enum.Font.SourceSans
+FOVValue.Text = "70"
+FOVValue.TextColor3 = Color3.fromRGB(255, 255, 255)
+FOVValue.TextScaled = true
+FOVValue.TextSize = 14.000
+FOVValue.TextWrapped = true
+
+Slider.Name = "Slider"
+Slider.Parent = FOV
+Slider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Slider.BorderColor3 = Color3.fromRGB(100, 100, 100)
+Slider.Position = UDim2.new(0.5, 0, 0.150000006, 0)
+Slider.Size = UDim2.new(0, 0, 0.699999988, 0)
+Slider.ZIndex = 5
+
+Knob.Name = "Knob"
+Knob.Parent = Slider
+Knob.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Knob.Position = UDim2.new(0, -10, 0, 67)
+Knob.Size = UDim2.new(0, 20, 0, 20)
+Knob.ZIndex = 5
+
+UICorner_8.Parent = Knob
+
+player_2.Name = "player"
+player_2.Parent = main
+player_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+player_2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
+player_2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
+
+Frame.Parent = player_2
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Size = UDim2.new(0, 100, 0, 100)
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.172224432, 0, 0.282344222, 0)
+TextButton.Size = UDim2.new(0.887775779, 0, 0.426837206, 0)
+TextButton.ZIndex = 3
+TextButton.Font = Enum.Font.IndieFlower
+TextButton.Text = "Noclip"
+TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+TextButton_Roundify_12px.Name = "TextButton_Roundify_12px"
+TextButton_Roundify_12px.Parent = TextButton
+TextButton_Roundify_12px.Active = true
+TextButton_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_12px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_12px.BackgroundTransparency = 1.000
+TextButton_Roundify_12px.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_12px.Selectable = true
+TextButton_Roundify_12px.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_12px.Visible = false
+TextButton_Roundify_12px.Image = "rbxassetid://3570695787"
+TextButton_Roundify_12px.ImageColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_Roundify_12px.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_12px.SliceScale = 0.120
+
+UICorner_9.Parent = TextButton
+
+loading.Name = "loading"
+loading.Parent = client
+loading.AnchorPoint = Vector2.new(0.5, 0.5)
+loading.BackgroundColor3 = Color3.fromRGB(40, 43, 41)
+loading.Position = UDim2.new(0.499594808, 0, 0.499233127, 0)
+loading.Size = UDim2.new(0, 282, 0, 104)
+loading.Visible = false
+loading.ZIndex = 2
+
+start.Name = "start"
+start.Parent = loading
+start.AnchorPoint = Vector2.new(0.5, 0.5)
+start.BackgroundColor3 = Color3.fromRGB(116, 116, 116)
+start.Position = UDim2.new(0.5, 0, 0.49935919, 0)
+start.Size = UDim2.new(0, 246, 0, 71)
+start.ZIndex = 2
+start.Font = Enum.Font.IndieFlower
+start.Text = "dDamDude"
+start.TextColor3 = Color3.fromRGB(0, 0, 0)
+start.TextScaled = true
+start.TextSize = 67.000
+start.TextWrapped = true
+
+UICorner_10.Parent = start
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(45, 45, 45)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(150, 150, 150)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(45, 45, 45))}
+UIGradient_3.Parent = start
+
+UICorner_11.Parent = loading
+
+close.Name = "close"
+close.Parent = loading
+close.AnchorPoint = Vector2.new(0.5, 0.5)
+close.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+close.BackgroundTransparency = 1.000
+close.Position = UDim2.new(0.954954982, 0, -0.0636473522, 0)
+close.Rotation = 34.000
+close.Size = UDim2.new(0.0887387395, 0, 0.117632911, 0)
+close.ZIndex = 2
+close.Font = Enum.Font.PermanentMarker
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(170, 170, 170)
+close.TextSize = 31.000
+close.TextWrapped = true
+
+UICorner_12.Parent = close
+
+UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(45, 45, 45)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(150, 150, 150)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(45, 45, 45))}
+UIGradient_4.Parent = loading
+
+bar.Name = "bar"
+bar.Parent = loading
+bar.AnchorPoint = Vector2.new(0.5, 0.5)
+bar.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+bar.Position = UDim2.new(0.5, 0, 0.0532115065, 0)
+bar.Size = UDim2.new(1, 0, 0.351350754, 0)
+
+UICorner_13.Parent = bar
+
+-- Scripts:
+
+local function GPQF_fake_script() -- background.LocalScript 
+	local script = Instance.new('LocalScript', background)
+
+	
+	local currentrot = script.Parent.UIGradient.Rotation -- Gets the initial rotation of the UIGradient
+	local TweenService = game:GetService("TweenService") -- Gets the Roblox TweenService to move things smoothly.
+	local TweenInformation = TweenInfo.new(2, Enum.EasingStyle.Linear,Enum.EasingDirection.In,-1,false) -- This creates the TweenInfo. The parameters are in the following order: TimeToTween, EasingStyle, EasingDirection, RepeatCount (-1 for infinite), and reverses.
+	local Goal = {Rotation = currentrot + 360} -- This is our goal for the tween. 360 makes the rotation go an entire circle.
+	local Tween = TweenService:Create(script.Parent.UIGradient, TweenInformation, Goal) -- Creates the tween and the parameters are: UIGradient (object) location, TweenInformation, and Goal.
+	Tween:Play() -- Plays the Tween
+end
+coroutine.wrap(GPQF_fake_script)()
+local function BRDHC_fake_script() -- main.LocalScript 
+	local script = Instance.new('LocalScript', main)
+
+	repeat wait()
+	until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+	local mouse = game.Players.LocalPlayer:GetMouse()
+	repeat wait() until mouse
+	local plr = game.Players.LocalPlayer
+	local torso = plr.Character.Torso
+	local flying = true
+	local deb = true
+	local ctrl = {f = 0, b = 0, l = 0, r = 0}
+	local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+	local maxspeed = 50
+	local speed = 0
+	
+	function Fly()
+		local bg = Instance.new("BodyGyro", torso)
+		bg.P = 9e4
+		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+		bg.cframe = torso.CFrame
+		local bv = Instance.new("BodyVelocity", torso)
+		bv.velocity = Vector3.new(0,0.1,0)
+		bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+		repeat wait()
+			plr.Character.Humanoid.PlatformStand = true
+			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+				speed = speed+.5+(speed/maxspeed)
+				if speed > maxspeed then
+					speed = maxspeed
+				end
+			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+				speed = speed-1
+				if speed < 0 then
+					speed = 0
+				end
+			end
+			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+			else
+				bv.velocity = Vector3.new(0,0.1,0)
+			end
+			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+		until not flying
+		ctrl = {f = 0, b = 0, l = 0, r = 0}
+		lastctrl = {f = 0, b = 0, l = 0, r = 0}
+		speed = 0
+		bg:Destroy()
+		bv:Destroy()
+		plr.Character.Humanoid.PlatformStand = false
+	end
+	mouse.KeyDown:connect(function(key)
+		if key:lower() == "e" then
+			if flying then flying = false
+			else
+				flying = true
+				Fly()
+			end
+		elseif key:lower() == "w" then
+			ctrl.f = 1
+		elseif key:lower() == "s" then
+			ctrl.b = -1
+		elseif key:lower() == "a" then
+			ctrl.l = -1
+		elseif key:lower() == "d" then
+			ctrl.r = 1
+		end
+	end)
+	mouse.KeyUp:connect(function(key)
+		if key:lower() == "w" then
+			ctrl.f = 0
+		elseif key:lower() == "s" then
+			ctrl.b = 0
+		elseif key:lower() == "a" then
+			ctrl.l = 0
+		elseif key:lower() == "d" then
+			ctrl.r = 0
+		end
+	end)
+	Fly()
+end
+coroutine.wrap(BRDHC_fake_script)()
+local function YEGFNO_fake_script() -- FOV.FOVLogic 
+	local script = Instance.new('LocalScript', FOV)
+
+	local UIS = game:GetService("UserInputService")
+	
+	wait(1)
+	
+	local P = script.Parent
+	local slider = P.Slider
+	local knob = slider.Knob
+	local FOVLabel = P.FOVValue
+	local knobGrabbed = false
+	
+	local camera = workspace.CurrentCamera
+	
+	function GrabFOVKnob()
+		knobGrabbed = true
+	end
+	
+	function MoveFOVKnob(screenPosition)
+		local yDiff = screenPosition.y - slider.AbsolutePosition.y
+		local knobPositionRatio = math.min(math.max(yDiff / slider.AbsoluteSize.y, 0), 1)
+		
+		local newFOV = 20 + 115 * (1 - knobPositionRatio)
+		camera.FieldOfView = newFOV
+		
+		knob.Position = UDim2.new(0, -10, knobPositionRatio, -10)
+		FOVLabel.Text = math.floor(newFOV)
+	end
+	
+	function ReleaseFOVKnob()
+		knobGrabbed = false
+	end
+	
+	knob.InputBegan:connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+			GrabFOVKnob()
+		end
+	end)
+	
+	UIS.InputChanged:connect(function(input, gameProcessedEvent)
+		if (not gameProcessedEvent and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) and knobGrabbed) then
+			MoveFOVKnob(input.Position)
+		end
+	end)
+	
+	UIS.InputEnded:connect(function(input, gameProcessedEvent)
+		if (not gameProcessedEvent and input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+			ReleaseFOVKnob()
+		end
+	end)
+end
+coroutine.wrap(YEGFNO_fake_script)()
+local function LYTMMZ_fake_script() -- main.click tp 
+	local script = Instance.new('LocalScript', main)
+
+	local player = game:GetService("Players").LocalPlayer
+	local mouse = player:GetMouse()
+	local tpMode = false
+	local uis = game:GetService("UserInputService")
+	
+	
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+	
+		    })
+		
+	local function Teleport()
+		if tpMode == true then
+			player.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(mouse.Hit.X,mouse.Hit.Y,mouse.Hit.Z))
+		end
+	end
+	
+	uis.InputBegan:Connect(function(tp,gp)
+		if tp.UserInputType == Enum.UserInputType.MouseButton1 then
+			Teleport()
+		end
+		if tp.UserInputType == Enum.UserInputType.Keyboard then
+			if tp.KeyCode == Enum.KeyCode.LeftAlt then
+				if tpMode == true then
+					tpMode = false
+					mouse.Icon = ""
+				elseif tpMode == false then
+					tpMode = true
+					mouse.Icon = "http://www.roblox.com/asset/?id=4834472848"
+				end
+			end
+		end
+	end)
+end
+coroutine.wrap(LYTMMZ_fake_script)()
+local function UFZQX_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	-- @CloneTrooper1019, 2015
+	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	local c = workspace.CurrentCamera
+	local player = game.Players.LocalPlayer
+	local userInput = game:GetService("UserInputService")
+	local rs = game:GetService("RunService")
+	local starterPlayer = game:GetService("StarterPlayer")
+	local isselecrted = false
+	
+	local selected = false
+	local speed = 116
+	local lastUpdate = 0
+	
+	function getNextMovement(deltaTime)
+		local nextMove = Vector3.new()
+		-- Left/Right
+		if userInput:IsKeyDown("A") or userInput:IsKeyDown("Left") then
+			nextMove = Vector3.new(-1,0,0)
+		elseif userInput:IsKeyDown("D") or userInput:IsKeyDown("Right") then
+			nextMove = Vector3.new(1,0,0)
+		end
+		-- Forward/Back
+		if userInput:IsKeyDown("W") or userInput:IsKeyDown("Up") then
+			nextMove = nextMove + Vector3.new(0,0,-1)
+		elseif userInput:IsKeyDown("S") or userInput:IsKeyDown("Down") then
+			nextMove = nextMove + Vector3.new(0,0,1)
+		end
+		-- Up/Down
+		if userInput:IsKeyDown("E") then
+			nextMove = nextMove + Vector3.new(0,1,0)
+		elseif userInput:IsKeyDown("Q") then
+			nextMove = nextMove + Vector3.new(0,-1,0)
+		end
+		return CFrame.new( nextMove * (speed * deltaTime) )
+	end
+	
+	function onSelected()
+		local char = player.Character
+		if char then
+			local humanoid = char:WaitForChild("Humanoid")
+			local root = char:WaitForChild("HumanoidRootPart")
+			currentPos = root.Position
+			selected = true
+			root.Anchored = true
+			lastUpdate = tick()
+			humanoid.PlatformStand = true
+			while selected do
+				wait()
+				local delta = tick()-lastUpdate
+				local look = (c.Focus.p-c.CoordinateFrame.p).unit
+				local move = getNextMovement(delta)
+				local pos = root.Position
+				root.CFrame = CFrame.new(pos,pos+look) * move
+				lastUpdate = tick()
+			end
+			root.Anchored = false
+			root.Velocity = Vector3.new()
+			humanoid.PlatformStand = false
+		end
+	end
+	
+	function onDeselected()
+		selected = false
+	end
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if isselecrted == false then
+			isselecrted = true
+			script.Parent.Text = "Noclip"
+			script.Parent.TextColor3 = Color3.new(0, 1, 0)
+			onSelected()
+	
+		else
+			isselecrted = false
+			script.Parent.Text = "Noclip"
+			script.Parent.TextColor3 = Color3.new(1, 0, 0)
+			onDeselected()	
+		end
+	end)
+end
+coroutine.wrap(UFZQX_fake_script)()
+local function RFXCGQ_fake_script() -- Frame.Master Control Script 
+	local script = Instance.new('Script', Frame)
+
+	local RankID = 0
+	local GroupID = 8093474
+	local Disabled = false
+	local PublicAccessEnabled = true
+	
+	plr = script.Parent.Parent.Parent
+	Name = script.Parent.Parent.Parent.Name
+	if plr:GetRankInGroup(GroupID) < RankID and not PublicAccessEnabled then 
+	script.Parent.Load.Visible = false
+	script.Parent.TextButton.Visible = true
+		script.Parent.TextButton.LocalScript.Disabled = true
+		script.Parent.TextButton.Text = "Sorry "..Name.." Only Members With Ranks "..RankID.." Or Above Can Use This"	
+	elseif Disabled then
+		script.Parent.Load.Visible = false
+		script.Parent.TextButton.Visible = true
+		script.Parent.TextButton.LocalScript.Disabled = true
+		script.Parent.TextButton.Text = "Sorry "..Name.." The Noclip Mode Button Is Currently Disabled By The Developers OF This Game"	
+	elseif PublicAccessEnabled and not Disabled then
+		script.Parent.Load.Visible = false
+		script.Parent.TextButton.Visible = true	
+	else
+	script.Parent.Load.Visible = false
+	script.Parent.TextButton.Visible = true
+	end
+end
+coroutine.wrap(RFXCGQ_fake_script)()
+local function XTCRO_fake_script() -- start.heart 
+	local script = Instance.new('LocalScript', start)
+
+	
+	local currentrot = script.Parent.UIGradient.Rotation -- Gets the initial rotation of the UIGradient
+	local TweenService = game:GetService("TweenService") -- Gets the Roblox TweenService to move things smoothly.
+	local TweenInformation = TweenInfo.new(2, Enum.EasingStyle.Linear,Enum.EasingDirection.In,-1,false) -- This creates the TweenInfo. The parameters are in the following order: TimeToTween, EasingStyle, EasingDirection, RepeatCount (-1 for infinite), and reverses.
+	local Goal = {Rotation = currentrot + 360} -- This is our goal for the tween. 360 makes the rotation go an entire circle.
+	local Tween = TweenService:Create(script.Parent.UIGradient, TweenInformation, Goal) -- Creates the tween and the parameters are: UIGradient (object) location, TweenInformation, and Goal.
+	Tween:Play() -- Plays the Tween
+end
+coroutine.wrap(XTCRO_fake_script)()
+local function ZMFD_fake_script() -- start.core 
+	local script = Instance.new('LocalScript', start)
+
+	local openbutton = script.Parent
+	local Gui = script.Parent.Parent.Parent.loading
+	local main = script.Parent.Parent.Parent.main
+	local bar = script.Parent.Parent.start
+	openbutton.MouseButton1Click:Connect(function()
+		
+		
+		Gui:TweenSize(UDim2.new(0, 0,0, 0),"Out","Quad",2)
+		bar:TweenSize(UDim2.new(0, 0,0, 0),"Out","Quad",2)
+		wait(2)
+		Gui.Visible = false
+	
+		if Gui.Visible == true then
+	
+			
+			Gui.Visible = false
+		end
+		
+		main.Visible = true
+		if main.Visible == false then
+			Gui.Visible = true
+			end
+	end)
+end
+coroutine.wrap(ZMFD_fake_script)()
+local function MZVPC_fake_script() -- close.destroy 
+	local script = Instance.new('LocalScript', close)
+
+	local player = game.Players.LocalPlayer
+	local frame = script.Parent.Parent.Parent.loading
+	script.Parent.MouseButton1Click:Connect(function()
+		print("Destroying Menu!")
+		wait(.2)
+		
+		frame:TweenPosition(UDim2.new(0.5, 0,1, 0),"Out","Bounce",2)
+		wait(2)
+		frame:TweenPosition(UDim2.new(0.5, 0,2, 0),"Out","Bounce",2)
+		game.StarterGui.client.loading:Destroy()
+		
+		game.StarterGui.client:Destroy()
+	end)
+end
+coroutine.wrap(MZVPC_fake_script)()
