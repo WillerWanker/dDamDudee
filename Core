@@ -26,8 +26,17 @@ local Frame = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
 local TextButton_Roundify_12px = Instance.new("ImageLabel")
 local UICorner_8 = Instance.new("UICorner")
+local Teleport = Instance.new("Frame")
+local TextFrame = Instance.new("Frame")
+local PlayerName = Instance.new("TextBox")
+local Request = Instance.new("TextLabel")
+local No = Instance.new("TextButton")
+local TeleportButton = Instance.new("TextButton")
+local Yes = Instance.new("TextButton")
+local Error = Instance.new("TextLabel")
 local credits2 = Instance.new("Frame")
 local extra2 = Instance.new("Frame")
+local KillAll = Instance.new("TextButton")
 local mainv2 = Instance.new("Frame")
 local visuals2 = Instance.new("Frame")
 local FOV = Instance.new("Frame")
@@ -36,16 +45,7 @@ local FOVValue = Instance.new("TextLabel")
 local Slider = Instance.new("Frame")
 local Knob = Instance.new("Frame")
 local UICorner_9 = Instance.new("UICorner")
-local loading = Instance.new("Frame")
-local start = Instance.new("TextButton")
-local UICorner_10 = Instance.new("UICorner")
-local UIGradient_3 = Instance.new("UIGradient")
-local UICorner_11 = Instance.new("UICorner")
-local close = Instance.new("TextButton")
-local UICorner_12 = Instance.new("UICorner")
-local UIGradient_4 = Instance.new("UIGradient")
-local bar = Instance.new("Frame")
-local UICorner_13 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
 
 --Properties:
 
@@ -57,7 +57,6 @@ main.Parent = client
 main.BackgroundColor3 = Color3.fromRGB(107, 107, 107)
 main.Position = UDim2.new(0.0640227348, 0, 0.039142713, 0)
 main.Size = UDim2.new(0, 452, 0, 672)
-main.Visible = false
 main.ZIndex = 2
 main.Active=true
 main.Draggable=true
@@ -178,8 +177,10 @@ UICorner_7.Parent = credits
 player2.Name = "player2"
 player2.Parent = main
 player2.BackgroundColor3 = Color3.fromRGB(204, 0, 255)
+player2.BackgroundTransparency = 1.000
 player2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
 player2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
+player2.Visible = false
 player2.ZIndex = 3
 
 Frame.Parent = player2
@@ -219,9 +220,131 @@ TextButton_Roundify_12px.SliceScale = 0.120
 
 UICorner_8.Parent = TextButton
 
+Teleport.Name = "Teleport"
+Teleport.Parent = Frame
+Teleport.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Teleport.BackgroundTransparency = 1.000
+Teleport.Position = UDim2.new(3.31999993, 0, 4.11999989, 0)
+Teleport.Size = UDim2.new(0, 100, 0, 100)
+Teleport.ZIndex = 5
+
+TextFrame.Name = "TextFrame"
+TextFrame.Parent = Teleport
+TextFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextFrame.BorderSizePixel = 0
+TextFrame.Position = UDim2.new(1.12, -125, 0.75, -50)
+TextFrame.Size = UDim2.new(0, 125, 0, 50)
+TextFrame.ZIndex = 6
+TextFrame.Style = Enum.FrameStyle.ChatGreen
+
+PlayerName.Name = "PlayerName"
+PlayerName.Parent = TextFrame
+PlayerName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName.BackgroundTransparency = 1.000
+PlayerName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PlayerName.BorderSizePixel = 0
+PlayerName.Position = UDim2.new(-0.100000001, 0, -0.25, 0)
+PlayerName.Size = UDim2.new(1.25, 0, 1.5, 0)
+PlayerName.ZIndex = 6
+PlayerName.Font = Enum.Font.SourceSansBold
+PlayerName.Text = ""
+PlayerName.TextColor3 = Color3.fromRGB(0, 0, 0)
+PlayerName.TextScaled = true
+PlayerName.TextSize = 10.000
+PlayerName.TextWrapped = true
+
+Request.Name = "Request"
+Request.Parent = TextFrame
+Request.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Request.BackgroundTransparency = 1.000
+Request.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Request.BorderSizePixel = 0
+Request.Position = UDim2.new(-0.100000001, 0, -0.5, 0)
+Request.Size = UDim2.new(1.25, 0, 2, 0)
+Request.Visible = false
+Request.ZIndex = 6
+Request.Font = Enum.Font.SourceSansBold
+Request.Text = ""
+Request.TextColor3 = Color3.fromRGB(0, 0, 0)
+Request.TextScaled = true
+Request.TextSize = 10.000
+Request.TextWrapped = true
+
+No.Name = "No"
+No.Parent = Teleport
+No.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+No.BorderColor3 = Color3.fromRGB(0, 0, 0)
+No.Position = UDim2.new(1.12000036, -125, 0.75, 50)
+No.Size = UDim2.new(0, 125, 0, 50)
+No.Visible = false
+No.ZIndex = 6
+No.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+No.Font = Enum.Font.SourceSansBold
+No.Text = "Don't Allow"
+No.TextColor3 = Color3.fromRGB(0, 0, 0)
+No.TextScaled = true
+No.TextSize = 10.000
+No.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+No.TextStrokeTransparency = 0.000
+No.TextWrapped = true
+
+TeleportButton.Name = "TeleportButton"
+TeleportButton.Parent = Teleport
+TeleportButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TeleportButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TeleportButton.Position = UDim2.new(1.12, -125, 0.75, 0)
+TeleportButton.Size = UDim2.new(0, 125, 0, 50)
+TeleportButton.ZIndex = 6
+TeleportButton.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+TeleportButton.Font = Enum.Font.SourceSansBold
+TeleportButton.Text = "Teleport"
+TeleportButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TeleportButton.TextScaled = true
+TeleportButton.TextSize = 10.000
+TeleportButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TeleportButton.TextStrokeTransparency = 0.000
+TeleportButton.TextWrapped = true
+
+Yes.Name = "Yes"
+Yes.Parent = Teleport
+Yes.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Yes.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Yes.Position = UDim2.new(1.18000031, -125, 0.75, 0)
+Yes.Size = UDim2.new(0, 119, 0, 50)
+Yes.Visible = false
+Yes.ZIndex = 6
+Yes.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+Yes.Font = Enum.Font.SourceSansBold
+Yes.Text = "Allow"
+Yes.TextColor3 = Color3.fromRGB(0, 0, 0)
+Yes.TextScaled = true
+Yes.TextSize = 10.000
+Yes.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Yes.TextStrokeTransparency = 0.000
+Yes.TextWrapped = true
+
+Error.Name = "Error"
+Error.Parent = Teleport
+Error.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Error.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Error.BorderSizePixel = 5
+Error.Position = UDim2.new(1, -120, 0.75, -105)
+Error.Size = UDim2.new(0, 115, 0, 50)
+Error.Visible = false
+Error.ZIndex = 6
+Error.Font = Enum.Font.SourceSansBold
+Error.Text = "Player Name is not a valid Player!"
+Error.TextColor3 = Color3.fromRGB(255, 255, 255)
+Error.TextScaled = true
+Error.TextSize = 24.000
+Error.TextStrokeTransparency = 0.000
+Error.TextWrapped = true
+
 credits2.Name = "credits2"
 credits2.Parent = main
 credits2.BackgroundColor3 = Color3.fromRGB(8, 0, 255)
+credits2.BackgroundTransparency = 1.000
 credits2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
 credits2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
 credits2.Visible = false
@@ -230,14 +353,32 @@ credits2.ZIndex = 3
 extra2.Name = "extra2"
 extra2.Parent = main
 extra2.BackgroundColor3 = Color3.fromRGB(255, 21, 0)
+extra2.BackgroundTransparency = 1.000
 extra2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
 extra2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
 extra2.Visible = false
 extra2.ZIndex = 3
 
+KillAll.Name = "Kill All"
+KillAll.Parent = extra2
+KillAll.BackgroundColor3 = Color3.fromRGB(84, 84, 84)
+KillAll.BackgroundTransparency = 1.000
+KillAll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KillAll.BorderSizePixel = 4
+KillAll.Position = UDim2.new(0, 0, 0, 44)
+KillAll.Size = UDim2.new(0, 102, 0, 18)
+KillAll.ZIndex = 6
+KillAll.Font = Enum.Font.SciFi
+KillAll.Text = "Kill All"
+KillAll.TextColor3 = Color3.fromRGB(255, 255, 255)
+KillAll.TextSize = 30.000
+KillAll.TextStrokeTransparency = 0.500
+KillAll.TextWrapped = true
+
 mainv2.Name = "mainv2"
 mainv2.Parent = main
 mainv2.BackgroundColor3 = Color3.fromRGB(25, 255, 0)
+mainv2.BackgroundTransparency = 1.000
 mainv2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
 mainv2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
 mainv2.Visible = false
@@ -246,6 +387,7 @@ mainv2.ZIndex = 3
 visuals2.Name = "visuals2"
 visuals2.Parent = main
 visuals2.BackgroundColor3 = Color3.fromRGB(255, 179, 0)
+visuals2.BackgroundTransparency = 1.000
 visuals2.Position = UDim2.new(0.00400000019, 0, 0.192000002, 0)
 visuals2.Size = UDim2.new(0.989000022, 0, 0.799000025, 0)
 visuals2.Visible = false
@@ -306,67 +448,25 @@ Knob.ZIndex = 5
 
 UICorner_9.Parent = Knob
 
-loading.Name = "loading"
-loading.Parent = client
-loading.AnchorPoint = Vector2.new(0.5, 0.5)
-loading.BackgroundColor3 = Color3.fromRGB(40, 43, 41)
-loading.Position = UDim2.new(0.499594808, 0, 0.499233127, 0)
-loading.Size = UDim2.new(0, 282, 0, 104)
-loading.ZIndex = 2
-
-start.Name = "start"
-start.Parent = loading
-start.AnchorPoint = Vector2.new(0.5, 0.5)
-start.BackgroundColor3 = Color3.fromRGB(116, 116, 116)
-start.Position = UDim2.new(0.5, 0, 0.49935919, 0)
-start.Size = UDim2.new(0, 246, 0, 71)
-start.ZIndex = 2
-start.Font = Enum.Font.IndieFlower
-start.Text = "dDamDude"
-start.TextColor3 = Color3.fromRGB(0, 0, 0)
-start.TextScaled = true
-start.TextSize = 67.000
-start.TextWrapped = true
-
-UICorner_10.Parent = start
-
-UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(45, 45, 45)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(150, 150, 150)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(45, 45, 45))}
-UIGradient_3.Parent = start
-
-UICorner_11.Parent = loading
-
-close.Name = "close"
-close.Parent = loading
-close.AnchorPoint = Vector2.new(0.5, 0.5)
-close.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
-close.BackgroundTransparency = 1.000
-close.Position = UDim2.new(0.954954982, 0, -0.0636473522, 0)
-close.Rotation = 34.000
-close.Size = UDim2.new(0.0887387395, 0, 0.117632911, 0)
-close.ZIndex = 2
-close.Font = Enum.Font.PermanentMarker
-close.Text = "X"
-close.TextColor3 = Color3.fromRGB(170, 170, 170)
-close.TextSize = 31.000
-close.TextWrapped = true
-
-UICorner_12.Parent = close
-
-UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(45, 45, 45)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(150, 150, 150)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(45, 45, 45))}
-UIGradient_4.Parent = loading
-
-bar.Name = "bar"
-bar.Parent = loading
-bar.AnchorPoint = Vector2.new(0.5, 0.5)
-bar.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
-bar.Position = UDim2.new(0.5, 0, 0.0532115065, 0)
-bar.Size = UDim2.new(1, 0, 0.351350754, 0)
-
-UICorner_13.Parent = bar
+TextButton_2.Parent = main
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.BackgroundTransparency = 1.000
+TextButton_2.Position = UDim2.new(0.871681392, 0, 0, 0)
+TextButton_2.Rotation = 36.000
+TextButton_2.Size = UDim2.new(0, 61, 0, 37)
+TextButton_2.ZIndex = 8
+TextButton_2.Font = Enum.Font.PermanentMarker
+TextButton_2.Text = "X"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextStrokeColor3 = Color3.fromRGB(130, 130, 130)
+TextButton_2.TextStrokeTransparency = 0.300
+TextButton_2.TextWrapped = true
 
 -- Scripts:
 
-local function FBUEH_fake_script() -- background.LocalScript 
+local function CUDNG_fake_script() -- background.LocalScript 
 	local script = Instance.new('LocalScript', background)
 
 	
@@ -377,100 +477,15 @@ local function FBUEH_fake_script() -- background.LocalScript
 	local Tween = TweenService:Create(script.Parent.UIGradient, TweenInformation, Goal) -- Creates the tween and the parameters are: UIGradient (object) location, TweenInformation, and Goal.
 	Tween:Play() -- Plays the Tween
 end
-coroutine.wrap(FBUEH_fake_script)()
-local function GPLVH_fake_script() -- main.LocalScript 
-	local script = Instance.new('LocalScript', main)
-
-	repeat wait()
-	until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
-	local mouse = game.Players.LocalPlayer:GetMouse()
-	repeat wait() until mouse
-	local plr = game.Players.LocalPlayer
-	local torso = plr.Character.Torso
-	local flying = true
-	local deb = true
-	local ctrl = {f = 0, b = 0, l = 0, r = 0}
-	local lastctrl = {f = 0, b = 0, l = 0, r = 0}
-	local maxspeed = 50
-	local speed = 0
-	
-	function Fly()
-		local bg = Instance.new("BodyGyro", torso)
-		bg.P = 9e4
-		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
-		bg.cframe = torso.CFrame
-		local bv = Instance.new("BodyVelocity", torso)
-		bv.velocity = Vector3.new(0,0.1,0)
-		bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
-		repeat wait()
-			plr.Character.Humanoid.PlatformStand = true
-			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
-				speed = speed+.5+(speed/maxspeed)
-				if speed > maxspeed then
-					speed = maxspeed
-				end
-			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
-				speed = speed-1
-				if speed < 0 then
-					speed = 0
-				end
-			end
-			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
-			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-			else
-				bv.velocity = Vector3.new(0,0.1,0)
-			end
-			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
-		until not flying
-		ctrl = {f = 0, b = 0, l = 0, r = 0}
-		lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		speed = 0
-		bg:Destroy()
-		bv:Destroy()
-		plr.Character.Humanoid.PlatformStand = false
-	end
-	mouse.KeyDown:connect(function(key)
-		if key:lower() == "e" then
-			if flying then flying = false
-			else
-				flying = true
-				Fly()
-			end
-		elseif key:lower() == "w" then
-			ctrl.f = 1
-		elseif key:lower() == "s" then
-			ctrl.b = -1
-		elseif key:lower() == "a" then
-			ctrl.l = -1
-		elseif key:lower() == "d" then
-			ctrl.r = 1
-		end
-	end)
-	mouse.KeyUp:connect(function(key)
-		if key:lower() == "w" then
-			ctrl.f = 0
-		elseif key:lower() == "s" then
-			ctrl.b = 0
-		elseif key:lower() == "a" then
-			ctrl.l = 0
-		elseif key:lower() == "d" then
-			ctrl.r = 0
-		end
-	end)
-	Fly()
-end
-coroutine.wrap(GPLVH_fake_script)()
-local function HTEOO_fake_script() -- player.open/close 
+coroutine.wrap(CUDNG_fake_script)()
+local function UYWBJDC_fake_script() -- player.open/close 
 	local script = Instance.new('LocalScript', player)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		
 	
 		
-		local menu = script.Parent.Parent.main2
+		local menu = script.Parent.Parent.mainv2
 		local credits =script.Parent.Parent.credits2
 		local visuals =script.Parent.Parent.visuals2
 		local person =script.Parent.Parent.player2
@@ -485,15 +500,15 @@ local function HTEOO_fake_script() -- player.open/close
 		end)
 	
 end
-coroutine.wrap(HTEOO_fake_script)()
-local function JQCSQE_fake_script() -- visuals.open/close 
+coroutine.wrap(UYWBJDC_fake_script)()
+local function JERG_fake_script() -- visuals.open/close 
 	local script = Instance.new('LocalScript', visuals)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		
 	
 		
-		local menu = script.Parent.Parent.main2
+		local menu = script.Parent.Parent.mainv2
 		local credits =script.Parent.Parent.credits2
 		local visuals =script.Parent.Parent.visuals2
 		local person =script.Parent.Parent.player2
@@ -508,15 +523,15 @@ local function JQCSQE_fake_script() -- visuals.open/close
 		end)
 	
 end
-coroutine.wrap(JQCSQE_fake_script)()
-local function RXJBLB_fake_script() -- main2.open/close 
+coroutine.wrap(JERG_fake_script)()
+local function GGXLE_fake_script() -- main2.open/close 
 	local script = Instance.new('LocalScript', main2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		
 	
 		
-		local menu = script.Parent.Parent.main2
+		local menu = script.Parent.Parent.mainv2
 		local credits =script.Parent.Parent.credits2
 		local visuals =script.Parent.Parent.visuals2
 		local person =script.Parent.Parent.player2
@@ -531,15 +546,15 @@ local function RXJBLB_fake_script() -- main2.open/close
 		end)
 	
 end
-coroutine.wrap(RXJBLB_fake_script)()
-local function OQRQ_fake_script() -- extra.open/close 
+coroutine.wrap(GGXLE_fake_script)()
+local function DHZFHL_fake_script() -- extra.open/close 
 	local script = Instance.new('LocalScript', extra)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		
 	
 		
-		local menu = script.Parent.Parent.main2
+		local menu = script.Parent.Parent.mainv2
 		local credits =script.Parent.Parent.credits2
 		local visuals =script.Parent.Parent.visuals2
 		local person =script.Parent.Parent.player2
@@ -554,15 +569,15 @@ local function OQRQ_fake_script() -- extra.open/close
 		end)
 	
 end
-coroutine.wrap(OQRQ_fake_script)()
-local function BKLN_fake_script() -- credits.open/close 
+coroutine.wrap(DHZFHL_fake_script)()
+local function HTHVMV_fake_script() -- credits.open/close 
 	local script = Instance.new('LocalScript', credits)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		
 	
 		
-		local menu = script.Parent.Parent.main2
+		local menu = script.Parent.Parent.mainv2
 		local credits =script.Parent.Parent.credits2
 		local visuals =script.Parent.Parent.visuals2
 		local person =script.Parent.Parent.player2
@@ -577,8 +592,8 @@ local function BKLN_fake_script() -- credits.open/close
 		end)
 	
 end
-coroutine.wrap(BKLN_fake_script)()
-local function HFGHXRB_fake_script() -- main.click tp 
+coroutine.wrap(HTHVMV_fake_script)()
+local function HIVRVF_fake_script() -- main.click tp 
 	local script = Instance.new('LocalScript', main)
 
 	local player = game:GetService("Players").LocalPlayer
@@ -602,7 +617,7 @@ local function HFGHXRB_fake_script() -- main.click tp
 			Teleport()
 		end
 		if tp.UserInputType == Enum.UserInputType.Keyboard then
-			if tp.KeyCode == Enum.KeyCode.LeftAlt then
+			if tp.KeyCode == Enum.KeyCode.L then
 				if tpMode == true then
 					tpMode = false
 					mouse.Icon = ""
@@ -614,8 +629,8 @@ local function HFGHXRB_fake_script() -- main.click tp
 		end
 	end)
 end
-coroutine.wrap(HFGHXRB_fake_script)()
-local function QPUH_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(HIVRVF_fake_script)()
+local function MSBII_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -699,8 +714,8 @@ local function QPUH_fake_script() -- TextButton.LocalScript
 		end
 	end)
 end
-coroutine.wrap(QPUH_fake_script)()
-local function AATW_fake_script() -- Frame.Master Control Script 
+coroutine.wrap(MSBII_fake_script)()
+local function HYVLV_fake_script() -- Frame.Master Control Script 
 	local script = Instance.new('Script', Frame)
 
 	local RankID = 0
@@ -728,8 +743,110 @@ local function AATW_fake_script() -- Frame.Master Control Script
 	script.Parent.TextButton.Visible = true
 	end
 end
-coroutine.wrap(AATW_fake_script)()
-local function LAMI_fake_script() -- FOV.FOVLogic 
+coroutine.wrap(HYVLV_fake_script)()
+local function WFYJQ_fake_script() -- Teleport.Request 
+	local script = Instance.new('Script', Teleport)
+
+	function Clean()
+		local TeleGui=script.Parent
+		TeleGui.TextFrame.PlayerName.Visible=true
+		TeleGui.TeleportButton.Visible=true
+		
+		TeleGui.TextFrame.Request.Visible=false
+		TeleGui.Yes.Visible=false
+		TeleGui.No.Visible=false
+	end
+	
+	Player=script.Parent.Parent.Parent
+	Character=Player.Character
+	
+	script.Parent.Yes.MouseButton1Click:connect(function()
+		local PlayerName=script.Parent.Player.Value
+		if not game.Players:FindFirstChild(PlayerName) then Clean() return end
+		
+		workspace[PlayerName].HumanoidRootPart.CFrame=Character.HumanoidRootPart.CFrame*CFrame.new(0,7.5,0)
+		Clean()
+	end)
+	
+	script.Parent.No.MouseButton1Click:connect(function()
+		local PlayerName=script.Parent.Player.Value
+		if not game.Players:FindFirstChild(PlayerName) then Clean() return end
+		
+		Clean()
+		local TeleGui=game.Players[PlayerName].PlayerGui.Teleport
+		TeleGui.Error.Visible=true
+		TeleGui.Error.Text=(PlayerName.." declined your teleport request.")
+		wait(2.5)
+		TeleGui.Error.Visible=false
+	end)
+	
+end
+coroutine.wrap(WFYJQ_fake_script)()
+local function NYCVU_fake_script() -- Teleport.Main 
+	local script = Instance.new('Script', Teleport)
+
+	Player=script.Parent.Parent.Parent
+	Player=game.Workspace
+	Character=Player.Character
+	
+	script.Parent.TeleportButton.MouseButton1Click:connect(function()
+		local PlayerName=script.Parent.TextFrame.PlayerName.Text
+		if game.Players:FindFirstChild(PlayerName) then
+			
+			if PlayerName==Player.Name then
+				script.Parent.Error.Text="You can't teleport to yourself!"
+				
+				spawn(function()
+				script.Parent.Error.Visible=true
+				wait(2.5)
+				script.Parent.Error.Visible=false
+				end)
+				
+				return
+			end
+			
+			local TeleGui=game.Players[PlayerName].PlayerGui.Teleport
+			
+			TeleGui.TextFrame.PlayerName.Visible=false
+			TeleGui.TeleportButton.Visible=false
+			
+			TeleGui.TextFrame.Request.Visible=true
+			TeleGui.Yes.Visible=true
+			TeleGui.No.Visible=true
+			TeleGui.TextFrame.Request.Text=(Player.Name.." would like to teleport to you.")
+			
+			TeleGui.Player.Value=Player.Name
+			
+		elseif not game.Players:FindFirstChild(PlayerName) then
+			
+			script.Parent.Error.Text=(PlayerName.." is not a valid Player.")
+			script.Parent.Error.Visible=true
+			wait(2.5)
+			script.Parent.Error.Visible=false
+			
+		end
+	end)
+	
+end
+coroutine.wrap(NYCVU_fake_script)()
+local function WMDHEM_fake_script() -- KillAll.Script 
+	local script = Instance.new('Script', KillAll)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		for i, v in pairs(workspace:GetChildren()) do
+			print("it got to pairs")
+			if v.ClassName == "Model" then
+				print("it got through class")
+				if v:FindFirstChild("Humanoid") then
+					v.Humanoid.Health = 0
+				end
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(WMDHEM_fake_script)()
+local function DYHDWXI_fake_script() -- FOV.FOVLogic 
 	local script = Instance.new('LocalScript', FOV)
 
 	local UIS = game:GetService("UserInputService")
@@ -781,62 +898,16 @@ local function LAMI_fake_script() -- FOV.FOVLogic
 		end
 	end)
 end
-coroutine.wrap(LAMI_fake_script)()
-local function CZGO_fake_script() -- start.heart 
-	local script = Instance.new('LocalScript', start)
+coroutine.wrap(DYHDWXI_fake_script)()
+local function NFKBS_fake_script() -- TextButton_2.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_2)
 
-	
-	local currentrot = script.Parent.UIGradient.Rotation -- Gets the initial rotation of the UIGradient
-	local TweenService = game:GetService("TweenService") -- Gets the Roblox TweenService to move things smoothly.
-	local TweenInformation = TweenInfo.new(2, Enum.EasingStyle.Linear,Enum.EasingDirection.In,-1,false) -- This creates the TweenInfo. The parameters are in the following order: TimeToTween, EasingStyle, EasingDirection, RepeatCount (-1 for infinite), and reverses.
-	local Goal = {Rotation = currentrot + 360} -- This is our goal for the tween. 360 makes the rotation go an entire circle.
-	local Tween = TweenService:Create(script.Parent.UIGradient, TweenInformation, Goal) -- Creates the tween and the parameters are: UIGradient (object) location, TweenInformation, and Goal.
-	Tween:Play() -- Plays the Tween
-end
-coroutine.wrap(CZGO_fake_script)()
-local function KMLP_fake_script() -- start.core 
-	local script = Instance.new('LocalScript', start)
-
-	local openbutton = script.Parent
-	local Gui = script.Parent.Parent.Parent.loading
-	local main = script.Parent.Parent.Parent.main
-	local bar = script.Parent.Parent.start
-	openbutton.MouseButton1Click:Connect(function()
+	local frame = script.Parent.Parent.Parent.main
 		
+	script.Parent.MouseButton1Click:connect(function()
 		
-		Gui:TweenSize(UDim2.new(0, 0,0, 0),"Out","Quad",2)
-		bar:TweenSize(UDim2.new(0, 0,0, 0),"Out","Quad",2)
-		wait(2)
-		Gui.Visible = false
 	
-		if Gui.Visible == true then
-	
-			
-			Gui.Visible = false
-		end
-		
-		main.Visible = true
-		if main.Visible == false then
-			Gui.Visible = true
-			end
+		frame:Destroy()
 	end)
 end
-coroutine.wrap(KMLP_fake_script)()
-local function DIQETYS_fake_script() -- close.destroy 
-	local script = Instance.new('LocalScript', close)
-
-	local player = game.Players.LocalPlayer
-	local frame = script.Parent.Parent.Parent.loading
-	script.Parent.MouseButton1Click:Connect(function()
-		print("Destroying Menu!")
-		wait(.2)
-		
-		frame:TweenPosition(UDim2.new(0.5, 0,1, 0),"Out","Bounce",2)
-		wait(2)
-		frame:TweenPosition(UDim2.new(0.5, 0,2, 0),"Out","Bounce",2)
-		game.StarterGui.client.loading:Destroy()
-		
-		game.StarterGui.client:Destroy()
-	end)
-end
-coroutine.wrap(DIQETYS_fake_script)()
+coroutine.wrap(NFKBS_fake_script)()
